@@ -1,7 +1,7 @@
 angular.module("ngBoilerplate.about", [
   "ui.state"
   "placeholders"
-  "ui.bootstrap"
+#  "ui.bootstrap"
 ]).config(config = ($stateProvider) ->
   $stateProvider.state "about",
     url: "/about"

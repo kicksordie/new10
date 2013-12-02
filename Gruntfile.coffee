@@ -412,6 +412,10 @@ module.exports = (grunt) ->
       globals: {}
 
     coffeelint:
+      options:
+        'max_line_length': 
+          value: 100
+
       src:
         files:
           src: ["<%= app_files.coffee %>"]
@@ -541,6 +545,9 @@ module.exports = (grunt) ->
           livereload: false
 
   grunt.initConfig grunt.util._.extend(taskConfig, userConfig)
+
+
+
   grunt.renameTask "watch", "delta"
   grunt.registerTask "watch", [
     "build"
@@ -576,6 +583,7 @@ module.exports = (grunt) ->
     "index:compile"
   ]
   
+
   ###
   The index.html template includes the stylesheet and javascript sources
   based on dynamic names calculated in this Gruntfile. This task assembles

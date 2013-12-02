@@ -85,7 +85,7 @@ ng-boilerplate/
   |  |- less/
   |  |  |- main.less
   |- vendor/
-  |  |- angular-bootstrap/
+  |  |- angular-ui-bootstrap/
   |  |- bootstrap/
   |  |- placeholders/
   |- .bowerrc
@@ -170,6 +170,25 @@ and Angular UI, which are listed in `bower.js`. To install them into the
 ```sh
 $ bower install
 ```
+
+Note: while this does install Angular UI from the bootstrap3 branch, that branch
+doesn't include a compiled distro.  If you're going to use Angular UI, then you need
+to do the following:
+
+```
+$ cd vendor/angular-ui-bootstrap
+$ npm install
+$ grunt
+```
+
+And then, uncomment the following line in `build.config.coffee`:
+
+```
+#      "vendor/angular-ui-bootstrap/dist/ui-bootstrap-tpls-0.7.0.min.js"
+```
+
+(Test it out by including `"ui-bootstrap"` in the module dependencies at the top of `about.coffee`.)
+
 
 In the future, should you want to add a new Bower package to your app, run the
 `install` command:
