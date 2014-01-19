@@ -36,5 +36,25 @@ angular.module("ngBoilerplate.home", [
     data:
       pageTitle: "Home"
 
-).controller "HomeCtrl", HomeController = ($scope) ->
-
+).controller "HomeCtrl", HomeController = ($scope, $http) ->
+  $scope.getLocation = (val) ->
+    return []  if val.toString().length < 2
+    $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
+      params:
+        query: val
+    ).then (res) ->
+      console.log res.data
+      addresses = []
+      angular.forEach res.data.instructors, (item) ->
+        addresses.push
+          name: item.firstname + " " + item.lastname
+          type: "instructor"
+  
+  
+      angular.forEach res.data.catalog_courses, (item) ->
+        addresses.push
+          name: item.catalog
+          type: "course"
+  
+  
+      addresses

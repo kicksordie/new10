@@ -47,33 +47,31 @@ li .review {
 
   .table {
     tr {
-        td {
-          background-color: @light-green;
-          border-right: 6px solid white;
-          padding: 5px 12px;
-          color: white;
-          text-align: center;
-          font-size: 1.25em;
-          letter-spacing: 0.5px;
-          font-weight: 600;
-        }
+      td {
+        background-color: @light-green;
+        border-right: 6px solid white;
+        padding: 5px 12px;
+        color: white;
+        text-align: center;
+        font-size: 1.25em;
+        letter-spacing: 0.5px;
+        font-weight: 600;
+        margin-bottom: 12px;
+      }
     }
     tr:nth-child(2) {
-      td {
-        background-color: transparent;
-        padding: 1px;
-        text-align: left;
-        font-size: 0.8em;
-        color: @light-grey;
-      }
+      border-top: 6px solid white;
     }
   }
 
-  li.scale {
-    @ball-size: 19px;
-    @ball-gap: 28px;
-    width: (5 * @ball-size) + (4 * @ball-gap);
-    margin-bottom: 20px;
+  div.scale {
+    @ball-size: 18px;
+    @ball-gap: 26px;
+
+    .scale-container {
+      width: (5 * @ball-size) + (4 * @ball-gap);
+      margin-bottom: 20px;
+    }
 
     .scale-components {
       position: relative;
@@ -84,7 +82,7 @@ li .review {
 
       .scale-ball {
         position: relative;
-        z-index: 250;
+        z-index: 1;
         width: @ball-size;
         height: @ball-size;
         border-radius: 50%;

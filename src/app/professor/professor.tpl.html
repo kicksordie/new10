@@ -10,7 +10,6 @@
 
 <div class="reviews container">
   <div class="row-fluid">
-    <h3>(5 Reviews)</h3>
     <ul class="courses list-unstyled">
       <li ng-repeat="course in courses" class="course">
         <h2>{{ course.catalog }}</h2>
@@ -18,11 +17,13 @@
           <li ng-repeat="review in course.reviews" class="review container">
             <div class="row">
               <div class="col-xs-3">
-                <table class="table table-nonfluid col-xs-6">
+                <table class="table table-nonfluid">
                   <tr>
-                    <td>
-                      {{ course.catalog }}
+                    <td colspan="2">
+                      {{ course.catalog }} | Fall 2013
                     </td>
+                  </tr>
+                  <tr>
                     <td>
                       {{ review.standing }}
                     </td>
@@ -30,49 +31,58 @@
                       {{ review.grade }}
                     </td>
                   </tr>
-                  <tr>
-                    <td>Class</td>
-                    <td>Student</td>
-                    <td>Grade</td>
-                  </tr>
                 </table>
-                <ul class="scales list-unstyled">
-                  <li class="scale intensity">
+              </div>
+              <div class="scales list-unstyled">
+                <div class="scale intensity col-xs-3">
+                  <div class="scale-container">
                     <h4>Easiness/Intensity</h4>
                       <div class="scale-components">
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball selected"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
+                        <div ng-class="{selected: review.intensity == 1}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.intensity == 2}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.intensity == 3}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.intensity == 4}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.intensity == 5}" class="scale-ball"></div>
                     </div>
-                    <h5>Average Effort</h5>
-                  </li>
-                  <li class="scale dedication">
+                    <h5>
+                      {{ parseIntensityRating(review.intensity) }}
+                    </h5>
+                  </div>
+                </div>
+                <div class="scale dedication col-xs-3">
+                  <div class="scale-container">
                     <h4>Dedication/Helpfulness</h4>
                       <div class="scale-components">
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball selected"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
+                        <div ng-class="{selected: review.dedication == 1}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.dedication == 2}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.dedication == 3}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.dedication == 4}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.dedication == 5}" class="scale-ball"></div>
                     </div>
-                    <h5>Super Stoked</h5>
-                  </li>
-                  <li class="scale comprehension">
+                    <h5>
+                      {{ parseDedicationRating(review.dedication) }}
+                    </h5>
+                  </div>
+                </div>
+                <div class="scale comprehension col-xs-3">
+                  <div class="scale-container">
                     <h4>Comprehensibility</h4>
                       <div class="scale-components">
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball selected"></div>
-                      <div class="scale-ball"></div>
-                      <div class="scale-ball"></div>
+                        <div ng-class="{selected: review.comprehensive == 1}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.comprehensive == 2}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.comprehensive == 3}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.comprehensive == 4}" class="scale-ball"></div>
+                        <div ng-class="{selected: review.comprehensive == 5}" class="scale-ball"></div>
                     </div>
-                    <h5>Crystal Clear</h5>
-                  </li>
-                </ul>
+                    <h5>
+                      {{ parseComprehensiveRating(review.comprehensive) }}
+                    </h5>
+                  </div>
+                </div>
               </div>
-              <div class="col-xs-9 review-body">
+            </div>
+            <div class="row">
+              <div class="col-xs-12 review-body">
                 {{ review.body }}
                 <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, est aliquam blanditiis soluta dolores magnam explicabo provident quaerat ad eligendi deleniti eveniet beatae vel aliquid assumenda omnis exercitationem nam earum. -->
               </div>
