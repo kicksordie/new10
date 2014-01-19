@@ -25,6 +25,7 @@ And of course we define a controller for our route.
 angular.module("ngBoilerplate.home", [
   "ui.state"
   # "plusOne"
+  "ui.bootstrap"
 ]).config(config = ($stateProvider) ->
   $stateProvider.state "home",
     url: "/home"
@@ -37,6 +38,8 @@ angular.module("ngBoilerplate.home", [
       pageTitle: "Home"
 
 ).controller "HomeCtrl", HomeController = ($scope, $http) ->
+  $scope.states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
+  $scope.tobedone = "test"
   $scope.getLocation = (val) ->
     return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
