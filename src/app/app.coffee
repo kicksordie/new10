@@ -5,6 +5,7 @@ angular.module("ngBoilerplate", [
   "ngBoilerplate.professor"
   "ui.state"
   "ui.route"
+  "ui.bootstrap"
 ]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider) ->
 
   # Enable cross domain calls
