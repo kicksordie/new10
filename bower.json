@@ -5,12 +5,9 @@
     "angular": "~1.2",
     "angular-mocks": "~1.2",
     "bootstrap": "3.x",
-    "angular-ui-bootstrap": "#bootstrap3",
+    "angular-ui-bootstrap": "latest",
     "angular-ui-router": "~0.0.1",
     "angular-ui-utils": "~0.0.3"
   },
-  "dependencies": {},
-  "resolutions": {
-    "angular": "~1.2"
-  }
+  "dependencies": {}
 }

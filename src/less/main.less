@@ -45,10 +45,20 @@
  */
 
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
+  // src: url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,600,700,300,800);
+  // src: local('Roboto Regular'), local('Roboto-Regular'), url(fonts/Roboto-Regular.woff) format('woff');
+}
+
+body {
+  font-family: "Open Sans";
+  // background-color: #8AD294;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Open Sans";
 }
 
 code, pre, .pre {
@@ -87,28 +97,37 @@ h2 {
  */
 
 .navbar {
+  border: 0;
+  border-bottom: 2px solid white;
+  border-radius: 0;
+  background-color: #3FB450;
+  height: 80px;
+  padding: 14px;
+  margin-bottom: 0;
 
-  .nav {
-    margin: 0;
-    width: 100%;
+  a.navbar-brand {
+    font-size: 2em;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
 
-    li {
-      a {
-        font-weight: bold;
-        text-align: center;
-        //border-left: 1px solid rgba(255, 255, 255, 0.75);
-        border-right: 1px solid rgba(0, 0, 0, .1);
-      }
-      
-      &:first-child a {
-        border-left: 0;
-        border-radius: 3px 0 0 3px;
-      }
-      
-      &:last-child a {
-        border-right: 0;
-        border-radius: 3px 0 0 3px;
-      }
+  li {
+    a {
+      font-weight: bold;
+      text-align: center;
+      //border-left: 1px solid rgba(255, 255, 255, 0.75);
+      border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    &:first-child a {
+      border-left: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    &:last-child a {
+      border-right: 0;
+      border-radius: 3px 0 0 3px;
     }
   }
 }

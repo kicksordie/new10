@@ -539,8 +539,8 @@ module.exports = (grunt) ->
         ]
 
     delta:
-      options:
-        livereload: true
+      # options:
+      #   livereload: true
 
       gruntfile:
         files: "Gruntfile.js"
