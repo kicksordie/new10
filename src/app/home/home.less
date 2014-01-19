@@ -1,7 +1,8 @@
 .welcome.jumbotron {
-  height: 500px;
+  // height: 500px;
+  height: 700px;
   text-align: center;
-  padding: 100px 0;
+  padding: 130px 0;
   background: url(img/blur_green.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -18,21 +19,44 @@
   .lead {
     font-size: 24px;
     line-height: 1.25;
-    padding: .5em 0 .3em 0;
+    // padding: .5em 0 .3em 0;
+    padding: .5em 0 3em 0;
     color: white;
     text-shadow: 0 0 20px rgba(0,0,0,0.4);
   }
 
-  .form-group input {
-    font-size: 1.4em;
-    width: 640px;
-    height: 60px;
+  form {
+    input {
+      font-size: 1.4em;
+      width: 640px;
+      height: 48px;
+    }
+    button {
+      font-size: 24px;
+    }
   }
 
-  .btn {
+
+
+  .btn-group > .btn {
     color: white;
     font-size: 21px;
-    padding: 14px 24px;
+    margin-top: 22px;
+
+    &:after {
+      position: absolute;
+      z-index: 0;
+      content: "";
+      left: 40px;
+      bottom: 8px;
+      right: 24px;
+      border-top: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+
+    &:hover {
+      color: darken(white, 10%)
+    }
   }
 }
 
