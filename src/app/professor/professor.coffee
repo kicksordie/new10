@@ -20,7 +20,11 @@ angular.module("ngBoilerplate.professor", [
       $scope.professor = data.courses
       $scope.firstname = data.firstname
       $scope.lastname  = data.lastname
-      $scope.courses   = data.courses
+      $scope.courses   = []
+
+      # Don't show classes without reviews
+      for course in data.courses
+        if course.reviews.length > 0 then $scope.courses.push(course)
 
       $scope.parseIntensityRating = (rating) ->
         switch rating
