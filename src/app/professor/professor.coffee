@@ -16,7 +16,7 @@ angular.module("ngBoilerplate.professor", [
 ).controller "ProfessorCtrl", ProfessorCtrl = ($scope, $stateParams, $http) ->
   
   $scope.professorId = $stateParams.professorId
-  $http.get('http://ratepoly2.scottvanderlind.com/0.1/school/1/instructor/' + $scope.professorId).success((data) ->
+  $http.get('http://ratepoly.scottvanderlind.com/0.1/school/1/instructor/' + $scope.professorId).success((data) ->
       $scope.professor = data.courses
       $scope.firstname = data.firstname
       $scope.lastname  = data.lastname

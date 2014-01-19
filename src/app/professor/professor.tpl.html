@@ -18,11 +18,13 @@
           <li ng-repeat="review in course.reviews" class="review container">
             <div class="row">
               <div class="col-xs-3">
-                <table class="table table-nonfluid col-xs-6">
+                <table class="table table-nonfluid">
                   <tr>
-                    <td>
+                    <td colspan="2">
                       {{ course.catalog }} | Fall 2013
                     </td>
+                  </tr>
+                  <tr>
                     <td>
                       {{ review.standing }}
                     </td>
@@ -30,14 +32,11 @@
                       {{ review.grade }}
                     </td>
                   </tr>
-                  <tr>
-                    <td>Class</td>
-                    <td>Student</td>
-                    <td>Grade</td>
-                  </tr>
                 </table>
-                <ul class="scales list-unstyled">
-                  <li class="scale intensity">
+              </div>
+              <div class="scales list-unstyled">
+                <div class="scale intensity col-xs-3">
+                  <div class="scale-container">
                     <h4>Easiness/Intensity</h4>
                       <div class="scale-components">
                         <div ng-class="{selected: review.intensity == 1}" class="scale-ball"></div>
@@ -49,8 +48,10 @@
                     <h5>
                       {{ parseIntensityRating(review.intensity) }}
                     </h5>
-                  </li>
-                  <li class="scale dedication">
+                  </div>
+                </div>
+                <div class="scale dedication col-xs-3">
+                  <div class="scale-container">
                     <h4>Dedication/Helpfulness</h4>
                       <div class="scale-components">
                         <div ng-class="{selected: review.dedication == 1}" class="scale-ball"></div>
@@ -62,8 +63,10 @@
                     <h5>
                       {{ parseDedicationRating(review.dedication) }}
                     </h5>
-                  </li>
-                  <li class="scale comprehension">
+                  </div>
+                </div>
+                <div class="scale comprehension col-xs-3">
+                  <div class="scale-container">
                     <h4>Comprehensibility</h4>
                       <div class="scale-components">
                         <div ng-class="{selected: review.comprehensive == 1}" class="scale-ball"></div>
@@ -75,10 +78,12 @@
                     <h5>
                       {{ parseComprehensiveRating(review.comprehensive) }}
                     </h5>
-                    </li>
-                </ul>
+                  </div>
+                </div>
               </div>
-              <div class="col-xs-9 review-body">
+            </div>
+            <div class="row">
+              <div class="col-xs-12 review-body">
                 {{ review.body }}
                 <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, est aliquam blanditiis soluta dolores magnam explicabo provident quaerat ad eligendi deleniti eveniet beatae vel aliquid assumenda omnis exercitationem nam earum. -->
               </div>
