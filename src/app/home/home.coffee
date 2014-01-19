@@ -37,10 +37,13 @@ angular.module("ngBoilerplate.home", [
     data:
       pageTitle: "Home"
 
-).controller "HomeCtrl", HomeController = ($scope, $http) ->
-  $scope.goId = ->
-    $state.go "professor",
-      professorId: 388
+).controller "HomeCtrl", HomeController = ($scope, $http, $state) ->
+  $scope.onSelect = ($item, $model, $label) ->
+    console.log("test")
+    $scope.$item = $item
+    $scope.$model = $model
+    $scope.$label = $label
+    window.location.href = "#/professor/"+$item.id
   $scope.getLocation = (val) ->
     return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",

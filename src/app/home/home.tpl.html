@@ -19,7 +19,7 @@
   <form class="navbar-form navbar-center" role="search"  ng-controller="HomeCtrl">
     <div class="form-group">
 
-    <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address as address.name for address in getLocation($viewValue) | filter:{name:$viewValue}" typeahead-loading="loadingLocations" typeahead-template-url="customTemplate2.html" class="form-control">
+    <input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address as address.name for address in getLocation($viewValue) | filter:{name:$viewValue}" typeahead-loading="loadingLocations" typeahead-template-url="customTemplate2.html" typeahead-on-select="onSelect($item, $model, $label)" class="form-control">
     </div>
 
   </form>
