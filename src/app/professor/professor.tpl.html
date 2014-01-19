@@ -1,0 +1,93 @@
+<div class="professor-info jumbotron">
+  <div class="container">
+    <h1 class="professor-name">{{ firstname }} <strong>{{ lastname }}</strong></h1>
+
+    <p class="sentence">
+      &ldquo;Professor {{ lastname }} is <strong>dedicated</strong>, <strong>sexy</strong>, and gives <strong>tough tests</strong>.&rdquo;
+    </p>
+  </div>
+</div>
+
+<div class="reviews container">
+  <div class="row-fluid">
+    <h3>(5 Reviews)</h3>
+    <ul class="courses list-unstyled">
+      <li ng-repeat="course in courses" class="course">
+        <h2>{{ course.catalog }}</h2>
+        <ul class="reviews list-unstyled">
+          <li ng-repeat="review in course.reviews" class="review container">
+            <div class="row">
+              <div class="col-xs-6">
+                <table class="table table-nonfluid col-xs-6">
+                  <tr>
+                    <td>
+                      {{ course.catalog }}
+                    </td>
+                    <td>
+                      {{ review.standing }}
+                    </td>
+                    <td>
+                      {{ review.grade }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Class</td>
+                    <td>Student</td>
+                    <td>Grade</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-3">
+                <ul class="scales list-unstyled">
+                  <li class="scale intensity">
+                    <h4>Easiness/Intensity</h4>
+                      <div class="scale-components">
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball selected"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                    </div>
+                    <h5>Average Effort</h5>
+                  </li>
+                  <li class="scale dedication">
+                    <h4>Dedication/Helpfulness</h4>
+                      <div class="scale-components">
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball selected"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                    </div>
+                    <h5>Super Stoked</h5>
+                  </li>
+                  <li class="scale comprehension">
+                    <h4>Comprehensibility</h4>
+                      <div class="scale-components">
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball selected"></div>
+                      <div class="scale-ball"></div>
+                      <div class="scale-ball"></div>
+                    </div>
+                    <h5>Crystal Clear</h5>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xs-9 review-body">
+                {{ review.body }}
+                <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, est aliquam blanditiis soluta dolores magnam explicabo provident quaerat ad eligendi deleniti eveniet beatae vel aliquid assumenda omnis exercitationem nam earum. -->
+              </div>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="container review">
+      <h2>Why?</h2>
+    </div>
+    </p>
+  </div>
+</div>

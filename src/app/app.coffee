@@ -2,10 +2,16 @@ angular.module("ngBoilerplate", [
   "templates-app"
   "templates-common"
   "ngBoilerplate.home"
-  "ngBoilerplate.about"
+  "ngBoilerplate.professor"
   "ui.state"
   "ui.route"
-]).config(myAppConfig = ($stateProvider, $urlRouterProvider) ->
+]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider) ->
+
+  # Enable cross domain calls
+  $httpProvider.defaults.useXDomain = true
+  # Remove the header used to identify ajax call  that would prevent CORS from working
+  delete $httpProvider.defaults.headers.common['X-Requested-With']
+
   $urlRouterProvider.otherwise "/home"
 ).run(run = ->
 ).controller "AppCtrl", AppCtrl = ($scope, $location) ->

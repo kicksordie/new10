@@ -24,7 +24,7 @@ And of course we define a controller for our route.
 ###
 angular.module("ngBoilerplate.home", [
   "ui.state"
-  "plusOne"
+  # "plusOne"
 ]).config(config = ($stateProvider) ->
   $stateProvider.state "home",
     url: "/home"

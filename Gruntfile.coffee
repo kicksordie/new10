@@ -244,7 +244,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-bump"
   grunt.loadNpmTasks "grunt-coffeelint"
   grunt.loadNpmTasks "grunt-recess"
-  grunt.loadNpmTasks "grunt-karma"
+  # grunt.loadNpmTasks "grunt-karma"
   grunt.loadNpmTasks "grunt-ngmin"
   grunt.loadNpmTasks "grunt-html2js"
 
@@ -411,18 +411,18 @@ module.exports = (grunt) ->
 
       globals: {}
 
-    coffeelint:
-      options:
-        'max_line_length': 
-          value: 100
+    # coffeelint:
+    #   options:
+    #     'max_line_length': 
+    #       value: 100
 
-      src:
-        files:
-          src: ["<%= app_files.coffee %>"]
+    #   src:
+    #     files:
+    #       src: ["<%= app_files.coffee %>"]
 
-      test:
-        files:
-          src: ["<%= app_files.coffeeunit %>"]
+      # test:
+      #   files:
+      #     src: ["<%= app_files.coffeeunit %>"]
 
     html2js:
       app:
@@ -552,16 +552,16 @@ module.exports = (grunt) ->
         files: ["<%= app_files.js %>"]
         tasks: [
           "jshint:src"
-          "karma:unit:run"
+          # "karma:unit:run"
           "copy:build_appjs"
         ]
 
       coffeesrc:
         files: ["<%= app_files.coffee %>"]
         tasks: [
-          "coffeelint:src"
+          # "coffeelint:src"
           "coffee:source"
-          "karma:unit:run"
+          # "karma:unit:run"
           "copy:build_appjs"
         ]
 
@@ -588,7 +588,7 @@ module.exports = (grunt) ->
         files: ["<%= app_files.jsunit %>"]
         tasks: [
           "jshint:test"
-          "karma:unit:run"
+          # "karma:unit:run"
         ]
         options:
           livereload: false
@@ -596,8 +596,8 @@ module.exports = (grunt) ->
       coffeeunit:
         files: ["<%= app_files.coffeeunit %>"]
         tasks: [
-          "coffeelint:test"
-          "karma:unit:run"
+          # "coffeelint:test"
+          # "karma:unit:run"
         ]
         options:
           livereload: false
@@ -609,7 +609,7 @@ module.exports = (grunt) ->
   grunt.renameTask "watch", "delta"
   grunt.registerTask "watch", [
     "build"
-    "karma:unit"
+    # "karma:unit"
     "delta"
   ]
   grunt.registerTask "default", [
@@ -620,7 +620,7 @@ module.exports = (grunt) ->
     "clean"
     "html2js"
     "jshint"
-    "coffeelint"
+    # "coffeelint"
     "coffee"
     "recess:build"
     "concat:build_css"
@@ -629,7 +629,7 @@ module.exports = (grunt) ->
     "copy:build_appjs"
     "copy:build_vendorjs"
     "index:build"
-    "karma:continuous"
+    # "karma:continuous"
   ]
   grunt.registerTask "compile", [
     "recess:compile"
