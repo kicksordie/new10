@@ -38,8 +38,9 @@ angular.module("ngBoilerplate.home", [
       pageTitle: "Home"
 
 ).controller "HomeCtrl", HomeController = ($scope, $http) ->
-  $scope.states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota", "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"]
-  $scope.tobedone = "test"
+  $scope.goId = ->
+    $state.go "professor",
+      professorId: 388
   $scope.getLocation = (val) ->
     return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
@@ -52,12 +53,13 @@ angular.module("ngBoilerplate.home", [
         addresses.push
           name: item.firstname + " " + item.lastname
           type: "instructor"
+          id: item.id
   
   
       angular.forEach res.data.catalog_courses, (item) ->
         addresses.push
           name: item.catalog
           type: "course"
-  
+          id: item.catalog 
   
       addresses
