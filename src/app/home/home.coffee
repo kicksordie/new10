@@ -44,9 +44,12 @@ angular.module("ngBoilerplate.home", [
     $scope.$model = $model
     $scope.$label = $label
     if $item.type is "instructor"
-      window.location.href = "#/professor/"+$item.id
+      #window.location.href = "#/professor/"+$item.id
+      $state.go "professor",
+          professorId: $item.id
     else
-      window.location.href = "#/course/"+$item.id
+      $state.go "course",
+          professorId: $item.id
   $scope.getLocation = (val) ->
     return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
