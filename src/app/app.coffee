@@ -4,6 +4,7 @@ angular.module("ngBoilerplate", [
   "ngBoilerplate.home"
   "ngBoilerplate.professor"
   "ngBoilerplate.course"
+  "ngBoilerplate.submit"
   "ui.router"
   "ui.route"
   "ui.bootstrap"

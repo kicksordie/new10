@@ -13,15 +13,6 @@ angular.module("ngBoilerplate.professor", [
     data:
       pageTitle: "Professor"
 
-  $stateProvider.state "course",
-    url: "/course/:professorId"
-    views:
-      main:
-        controller: "ProfessorCtrl"
-        templateUrl: "professor/professor.tpl.html"
-
-    data:
-      pageTitle: "Professor"
 ).controller "ProfessorCtrl", ProfessorCtrl = ($scope, $stateParams, $http) ->
   
   $scope.professorId = $stateParams.professorId
