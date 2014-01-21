@@ -1,5 +1,5 @@
 angular.module("ngBoilerplate.course", [
-  "ui.state"
+  "ui.router"
   "placeholders"
 #  "ui.bootstrap"
 ]).config(config = ($stateProvider) ->

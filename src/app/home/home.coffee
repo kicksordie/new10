@@ -23,7 +23,7 @@ this way makes each module more "self-contained".
 And of course we define a controller for our route.
 ###
 angular.module("ngBoilerplate.home", [
-  "ui.state"
+  "ui.router"
   # "plusOne"
   "ui.bootstrap"
 ]).config(config = ($stateProvider) ->

@@ -4,7 +4,7 @@ angular.module("ngBoilerplate", [
   "ngBoilerplate.home"
   "ngBoilerplate.professor"
   "ngBoilerplate.course"
-  "ui.state"
+  "ui.router"
   "ui.route"
   "ui.bootstrap"
 ]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) ->
