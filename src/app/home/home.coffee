@@ -43,7 +43,10 @@ angular.module("ngBoilerplate.home", [
     $scope.$item = $item
     $scope.$model = $model
     $scope.$label = $label
-    window.location.href = "#/professor/"+$item.id
+    if $item.type is "instructor"
+      window.location.href = "#/professor/"+$item.id
+    else
+      window.location.href = "#/course/"+$item.id
   $scope.getLocation = (val) ->
     return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
@@ -58,11 +61,10 @@ angular.module("ngBoilerplate.home", [
           type: "instructor"
           id: item.id
   
-  
       angular.forEach res.data.catalog_courses, (item) ->
         addresses.push
           name: item.catalog
           type: "course"
-          id: item.catalog 
+          id: item.catalog
   
       addresses

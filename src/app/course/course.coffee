@@ -1,38 +1,28 @@
-angular.module("ngBoilerplate.professor", [
+angular.module("ngBoilerplate.course", [
   "ui.state"
   "placeholders"
 #  "ui.bootstrap"
 ]).config(config = ($stateProvider) ->
-  $stateProvider.state "professor",
-    url: "/professor/:professorId"
-    views:
-      main:
-        controller: "ProfessorCtrl"
-        templateUrl: "professor/professor.tpl.html"
-
-    data:
-      pageTitle: "Professor"
-
   $stateProvider.state "course",
     url: "/course/:professorId"
     views:
       main:
-        controller: "ProfessorCtrl"
-        templateUrl: "professor/professor.tpl.html"
+        controller: "CourseCtrl"
+        templateUrl: "course/course.tpl.html"
 
     data:
       pageTitle: "Professor"
-).controller "ProfessorCtrl", ProfessorCtrl = ($scope, $stateParams, $http) ->
+).controller "CourseCtrl", CourseCtrl = ($scope, $stateParams, $http) ->
   
   $scope.professorId = $stateParams.professorId
-  $http.get('http://ratepoly.scottvanderlind.com/0.1/school/1/instructor/' + $scope.professorId).success((data) ->
+  $http.get('http://ratepoly.scottvanderlind.com/0.1/school/1/course/' + $scope.professorId + '/all').success((data) ->
       $scope.professor = data.courses
-      $scope.firstname = data.firstname
+      $scope.firstname = $scope.professorId
       $scope.lastname  = data.lastname
       $scope.courses   = []
 
       # Don't show classes without reviews
-      for course in data.courses
+      for course in data
         if course.reviews.length > 0 then $scope.courses.push(course)
 
       $scope.parseIntensityRating = (rating) ->

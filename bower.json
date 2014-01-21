@@ -6,6 +6,7 @@
     "angular-mocks": "~1.2",
     "bootstrap": "latest",
     "angular-ui-bootstrap": "latest",
+    "angular-bootstrap": "latest",
     "angular-ui-router": "~0.0.1",
     "angular-ui-utils": "~0.0.3"
   },

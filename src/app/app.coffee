@@ -3,10 +3,11 @@ angular.module("ngBoilerplate", [
   "templates-common"
   "ngBoilerplate.home"
   "ngBoilerplate.professor"
+  "ngBoilerplate.course"
   "ui.state"
   "ui.route"
   "ui.bootstrap"
-]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider) ->
+]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) ->
 
   # Enable cross domain calls
   $httpProvider.defaults.useXDomain = true
