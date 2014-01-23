@@ -10,6 +10,8 @@ angular.module("ngBoilerplate", [
   "ui.bootstrap"
 ]).config(myAppConfig = ($stateProvider, $urlRouterProvider, $httpProvider, $locationProvider) ->
 
+  $locationProvider.html5Mode(true)
+
   # Enable cross domain calls
   $httpProvider.defaults.useXDomain = true
   # Remove the header used to identify ajax call  that would prevent CORS from working
