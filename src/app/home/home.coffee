@@ -51,12 +51,11 @@ angular.module("ngBoilerplate.home", [
       $state.go "course",
           professorId: $item.id
   $scope.getLocation = (val) ->
-    return []  if val.toString().length < 2
     $http.get("http://ratepoly.scottvanderlind.com/0.1/school/1/search",
       params:
         query: val
     ).then (res) ->
-      console.log res.data
+      #console.log res.data
       addresses = []
       angular.forEach res.data.instructors, (item) ->
         addresses.push
