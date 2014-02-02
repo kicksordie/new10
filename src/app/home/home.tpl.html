@@ -1,6 +1,7 @@
 <script type="text/ng-template" id="customTemplate2.html">
   <a>
-      <img ng-src="{{match.model.type == 'instructor' && 'http://png-5.findicons.com/files/icons/1688/web_blog/48/professors_hat.png' || 'http://onlinephysics.pbworks.com/f/icon_textbook.jpg'}}" width="32">
+      <!--img ng-src="{{match.model.type == 'instructor' && 'http://png-5.findicons.com/files/icons/1688/web_blog/48/professors_hat.png' || 'http://onlinephysics.pbworks.com/f/icon_textbook.jpg'}}" width="32"-->
+<i class="fa fa-book"></i>
       <span bind-html-unsafe="match.model.name | typeaheadHighlight:query"></span>
   </a>
 </script>
